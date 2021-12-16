@@ -7,18 +7,30 @@ class SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return <Widget>[
-      [
-        const DivederBottom(start: Colors.black12, end: Colors.black54),
-        'Or'.text.make().pOnly(left: 15, right: 15),
-        const DivederBottom(),
-      ].row().pOnly(top: 10),
-      <Widget>[
-        const IconSocial(icon: FontAwesomeIcons.facebookF),
-        40.widthBox,
-        const IconSocial(icon: FontAwesomeIcons.google),
-      ].row(),
-    ].column();
+    return Column(
+      children: [
+        Dimens.height20,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            DivederBottom(start: Colors.black12, end: Colors.black54),
+            Padding(
+              padding: EdgeInsets.only(left: 15, right: 15),
+              child: Text('Or'),
+            ),
+            DivederBottom(),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            IconSocial(icon: FontAwesomeIcons.facebookF),
+            SizedBox(width: 40),
+            IconSocial(icon: FontAwesomeIcons.google),
+          ],
+        )
+      ],
+    );
   }
 }
 
